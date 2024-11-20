@@ -1,0 +1,99 @@
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background-color: #4B0082; /* Match purple background color */
+color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.forgot-password-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 80%;
+max-width: 1200px;
+background: #ffffff;
+color: #000000;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+flex: 1;
+padding: 20px;
+}
+
+h1 {
+font-size: 2rem;
+color: #4B0082;
+}
+
+p {
+margin: 10px 0 20px;
+font-size: 1rem;
+}
+
+.form-container {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+input[type="email"] {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 1rem;
+}
+
+.reset-btn {
+padding: 10px;
+font-size: 1rem;
+color: #ffffff;
+background-color: #4B0082;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.reset-btn:hover {
+background-color: #370061;
+}
+
+.illustration {
+flex: 1;
+text-align: center;
+}
+
+.illustration img {
+max-width: 100%;
+height: auto;
+}
+
+.logo {
+position: absolute;
+top: 5%;
+left: 7%;
+transform: translate(-50%, -50%);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+  
+.shield-icon .icon {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+}
+  
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e2cece;
+}
+  
