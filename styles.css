@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #9da6b9;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+
+.login-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(24, 38, 59);
+    padding: 2rem;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 28rem;
+    padding: 2rem;
+}
+
+.login-form h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #a9b3c8;
+}
+
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #cbd0db;
+    border: 2px solid #c6cad2;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    border-color: #6b7280;
+    background-color: white;
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+.forg a{
+    font-size: 15px;
+    color: #a5b6d7;
+    margin-left: 260px;
+    margin-bottom: 20px;
+}
+
+.create-account {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #b59978;
+    text-decoration: none;
+}
+.create-account:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #111827;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #334967;
+}
+
+.login-button:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+.arrow-icon {
+    transition: transform 0.2s ease;
+}
+
+
+
+.image-section {
+    display: none;
+    width: 50%;
+    position: relative;
+}
+
+.image-section img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    position: absolute;
+    top: 5%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+.shield-icon .icon {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+}
+  
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e2cece;
+}
+
+
+/* Responsive design */
+@media (min-width: 1024px) {
+    .login-section {
+        width: 50%;
+    }
+    
+    .image-section {
+        display: block;
+    }
+}
