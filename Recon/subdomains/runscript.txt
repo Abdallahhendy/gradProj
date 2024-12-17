@@ -1,7 +1,0 @@
-wordlist >>>python wordlist.py example.com --wordlist (your wordlist) --https --threads 100
-
-crt.sh>>>python crtsh.py example.com --https --threads 100
-
-api>>>>python api.py example.com --api-key (YOUR_API_KEY) --https --threads 100
-
-     python run_all.py
