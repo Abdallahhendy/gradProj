@@ -4,6 +4,7 @@ ftp
 api
 ftp
 localhost
+local
 webmail
 smtp
 pop
@@ -17,12 +18,15 @@ autoconfig
 m
 imap
 test
+tst
 ns
 blog
 pop3
 dev
 www2
 admin
+root
+adm
 forum
 news
 vpn
@@ -34,7 +38,6 @@ old
 lists
 support
 mobile
-mx
 static
 docs
 beta
@@ -65,6 +68,7 @@ www3
 dns
 search
 staging
+stg
 server
 mx1
 chat
@@ -100,3 +104,5 @@ sms
 office
 exchange
 ipv4
+cli
+skills
