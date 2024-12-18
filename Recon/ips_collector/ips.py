@@ -37,13 +37,14 @@ def save_ips_to_file(unique_ips, domain):
 
 def main():
     domain = input("[*] Enter the domain (e.g., example.com): ").strip()
-    result_file = input("[*] Enter the <ABSOLUTE> file path: ")
+    subdom_file = rf'D:\Old D Parti\Mine-Repos\gradProj\Recon\subdomains\{domain}_all_subdomains.txt'
+
 
     try:
-        with open(result_file, 'r') as f:
+        with open(subdom_file, 'r') as f:
             subdomains = [line.strip() for line in f.readlines()]
     except FileNotFoundError:
-        print(f"[-] The file {result_file} does not exist.")
+        print(f"[-] The file {subdom_file} does not exist.")
         return
 
     unique_ips = extract_unique_ips(subdomains)

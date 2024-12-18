@@ -1,5 +1,6 @@
 import requests
 import os
+
 def check_security_headers(url):
     headers_to_check = {
         "security_headers": [
@@ -40,15 +41,8 @@ def check_security_headers(url):
 
     return results
 
-def read_urls_from_file(file_path):
-    script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the script's directory
-    file_path = os.path.join(script_dir, file_path)  # Build the full file path
-
-    with open(file_path, 'r') as file:
-        return [line.strip() for line in file.readlines()]
-
 if __name__ == "__main__":
-    urls = read_urls_from_file("urls.txt")
+    target = input("[*] Enter the target name: ")
     description = {
         "Content-Security-Policy": "Helps prevent cross-site scripting (XSS) attacks and data injection.",
         "Strict-Transport-Security": "Forces secure (HTTPS) connections to the server, mitigating man-in-the-middle attacks.",
@@ -61,24 +55,24 @@ if __name__ == "__main__":
         "Cache-Control": "Prevents sensitive data from being stored in cache, reducing risks of data theft.",
         "Set-Cookie": "Ensures secure and HttpOnly attributes on cookies, protecting against cookie theft and XSS."
     }
-    for url in urls:
-        print(f"\nChecking headers for: {url}")
-        results = check_security_headers(url)
 
-        print("\nSecurity Headers:")
-        for header, value in results["security_headers"].items():
-            if value == "Not present":
-                print(f"  {header}: Missing")
-                print(f"{description[f"{header}"]}")
-            else:
-                pass
+    print(f"\nChecking headers for: {target}")
+    results = check_security_headers(target)
 
-        print("\nInfo Headers:")
-        for header, value in results["info_headers"].items():
-            if value == "Not present":
-                pass
-            else:
-                print(f"  {header}: {value}")
+    print("\nSecurity Headers:")
+    for header, value in results["security_headers"].items():
+        if value == "Not present":
+            print(f"  {header}: Missing")
+            # print(f"{description[f"{header}"]}")
+        else:
+            pass
+
+    print("\nInfo Headers:")
+    for header, value in results["info_headers"].items():
+        if value == "Not present":
+            pass
+        else:
+            print(f"  {header}: {value}")
 
 
 

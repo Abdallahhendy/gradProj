@@ -18,6 +18,8 @@ def scan_target(ip):
                 for port in scanner[ip]['tcp']:
                     port_info = scanner[ip]['tcp'][port]
                     service_name = port_info.get('name', 'unknown')
+                    if service_name == "http-proxy":
+                        service_name = "http" if port == 80 else "https"    
                     print(f"  Port {port}/TCP: {port_info['state']} ({service_name})")
                     open_ports.append(f"{service_name}({port})")
             
@@ -25,7 +27,7 @@ def scan_target(ip):
             if 'osmatch' in scanner[ip]:
                 print("\nDetected Operating System(s):")
                 for os in scanner[ip]['osmatch']:
-                    print(f"  {os['name']} ({os['accuracy']}% accuracy)")
+                    print(f"  {os['name']}")
             else:
                 print("\nNo OS information detected.")
 
@@ -36,7 +38,7 @@ def scan_target(ip):
             print(f"Host {ip} is down or unresponsive.")
     
     except Exception as e:
-        print(f"An error occurred while scanning {ip}: {e}")
+        print(f"An error occurred while scanning {ip}")
 
 def main():
     target = input("Enter a single IP or the path to a file containing a list of IPs: ")
